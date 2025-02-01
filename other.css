@@ -1,0 +1,534 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Partie 1 du site */
+.part1 {
+    height: 100vh;
+    background-image: url(wallpaper2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1C3D5A;
+    padding: 1rem 2rem;
+    z-index: 12;
+}
+/* Menu */
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.menu li a {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: #1e90ff;
+    transition: 0.3s;
+}
+/* Styles pour le menu burger */
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    list-style: none;
+}
+
+header li {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    padding: 0.5rem;
+}
+
+header a {
+    text-decoration: none;
+    color: #f0f0f0;
+}
+
+header li:hover {
+    color: #1e90ff;
+    transition: 1.5s;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Contenu de la partie 1 */
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 10%;
+}
+
+#scont1 {
+    background-color: aliceblue;
+    width: 45%;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#scont2 img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Partie 2 */
+.part2 {
+    position: relative;
+}
+
+.spart2 {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 70%;
+    height: 70%;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.acceuil{
+    background-color: #fff;
+    color:red;
+    border-radius: 10px;
+    width:30%;
+    height: 25vb;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%, 50%)
+    
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #1C3D5A;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer .footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+footer .footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+footer .footer-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: #1e90ff;
+}
+
+footer .footer-socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+footer .footer-socials a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+footer .footer-socials a:hover {
+    color: #1e90ff;
+}
+
+footer .footer-bottom {
+    margin-top: 20px;
+    font-size: 0.875rem;
+    color: #bbb;
+}
+
+/* Media Queries pour une responsivité parfaite */
+
+/* Réduire la taille de la police et ajuster les marges pour les tablettes */
+@media (max-width: 1024px) {
+    header ul {
+        gap: 1rem;
+    }
+
+    header li {
+        font-size: 1.3rem;
+    }
+
+    .content {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 15%;
+    }
+
+    #scont1, #scont2 img {
+        width: 80%;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .footer-logo, footer .footer-links, footer .footer-socials {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+.container {
+    text-align: center;
+    background: white;
+    height: 90vh;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #1C3D5A;
+}
+form {
+    margin-top: 20px;
+    display: inline-block;
+}
+label {
+    margin-right: 30px;
+}
+input [type="text"]{
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+#weather {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 16px #1C3D5A;
+    backdrop-filter: blur(10px); /* Effet de flou sur l'arrière-plan */
+    margin-top: 20px;
+}
+
+.weather-card {
+    display: inline-block;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0, 0.1);  
+    text-align: center;
+    transition: transform 0.2s ease;
+    font-family: Arial, sans-serif;
+}
+.weather-card:hover {
+    transform: scale(1.05); /* Agrandir légèrement au survol */
+}
+.weather-card h2{
+    margin-top: 0;       
+}
+.weather-card img{
+    width: 100px;
+    height: 100px;
+}
+.weather-card p{
+    margin: 5px 0;                      
+}
+
+
+
+/*** Pop up ***/
+
+#popup {
+    display: none; /* Cache la pop-up par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+/*** mention legale */
+#mention-legales h1 {
+    font-size: 2.5rem;
+}
+
+#mention-legales h2 {
+    color: #2c3e50;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#mention-legales ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#mention-legalesli {
+    margin: 10px 0;
+}
+
+/* Formulaire de contact */
+#mention-legales form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+#mention-legales input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+#mention-legales textarea {
+    resize: vertical;
+}
+
+#mention-legales input[type="submit"] {
+    background-color: #1C3D5A;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#mention-legalesinput[type="submit"]:hover {
+    background-color: #1C3D5A;
+}
+#hh1 {
+    text-align: center;
+    color: red;
+}
+
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.weather-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #1C3D5A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+h1, p {
+    margin: 5px 0;
+}
+
+
+/* Pour les écrans de mobile et petites tablettes */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header ul {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+
+    .content {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 20%;
+    }
+
+    #scont1, #scont2 img {
+        width: 90%;
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .footer-logo {
+        font-size: 1.2rem;
+    }
+
+    footer .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    footer .footer-socials {
+        gap: 1rem;
+    }
+
+    footer .footer-bottom {
+        font-size: 0.75rem;
+    }
+}
+
+/* Pour les petits écrans de smartphones */
+@media (max-width: 480px) {
+    body {
+        height: 120vh;
+    }
+    .part1 {
+        height: 100vh;
+        background-image: url(wallpaper2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #1C3D5A;
+        padding: 1rem 0;
+    }
+
+    .menu.active {
+        display: flex;
+        z-index: 1;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    .container {
+        height: 130vh;
+    }
+
+
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .footer-logo {
+        font-size: 1.1rem;
+    }
+
+    footer .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    footer .footer-socials {
+        gap: 0.5rem;
+    }
+
+    footer .footer-bottom {
+        font-size: 0.7rem;
+    }
+}

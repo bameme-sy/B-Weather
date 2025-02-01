@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B'Weather App</title>
+    <link rel="stylesheet" href="other.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    
+    <!-- partie une du site-->
+    <div class="part1.0">
+      <header>
+          <div class="menu-toggle" onclick="toggleMenu()">
+              &#9776;
+          </div>
+          <ul class="menu"> 
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="weather.html">Climat</a></li>
+            <li><a href="map.html">Carte du monde</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </header>
+
+                <h1 id="hh1">Mention legale factice</h1>
+      <section id="mentions-legales">
+        <h2>Mentions Légales</h2>
+        <p>Le site web <strong>www.monsite.com</strong> est édité par :</p>
+        <ul>
+            <li><strong>Nom de l'entreprise ou du créateur</strong>: Jean Dupont</li>
+            <li><strong>Forme juridique</strong>: Auto-entrepreneur</li>
+            <li><strong>Adresse</strong>: 12 Rue Exemple, 75000 Paris, France</li>
+            <li><strong>Téléphone</strong>: +33 1 23 45 67 89</li>
+            <li><strong>Email</strong>: contact@monsite.com</li>
+        </ul>
+
+        <h3>Hébergement</h3>
+        <p>Le site est hébergé par :</p>
+        <ul>
+            <li><strong>Nom de l'hébergeur</strong>: OVH</li>
+            <li><strong>Adresse</strong>: 2 Rue Kellermann, 59100 Roubaix, France</li>
+            <li><strong>Téléphone</strong>: +33 9 72 10 10 07</li>
+        </ul>
+
+        <h3>Propriété intellectuelle</h3>
+        <p>Tous les contenus présents sur ce site (textes, images, graphiques, etc.) sont la propriété exclusive de l'éditeur, sauf mention contraire. Toute reproduction ou représentation totale ou partielle du site, par quelque procédé que ce soit, sans autorisation préalable, est interdite.</p>
+
+        <h3>Protection des données personnelles</h3>
+        <p>Le site respecte la législation en vigueur sur la protection des données personnelles (RGPD). Aucune donnée personnelle n'est collectée sans le consentement de l'utilisateur. Les utilisateurs disposent d'un droit d'accès, de rectification et de suppression de leurs données en nous contactant à l'adresse : <strong>contact@monsite.com</strong>.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Pour toute question, suggestion ou demande particulière, vous pouvez nous contacter en utilisant le formulaire ci-dessous ou par email.</p>
+
+        <form action="mailto:contact@monsite.com" method="post" enctype="text/plain">
+            <label for="name">Nom :</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email :</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="message">Message :</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+            <input type="submit" value="Envoyer">
+        </form>
+    </section>
+
+
+
+
+      <button id="openPopup">Pop-up</button>
+
+      <div id="popup" class="popup">
+          <div class="popup-content">
+              <span class="close-btn" id="closePopup">&times;</span>
+              <h2>Bienvenue</h2>
+              <p></p>
+          </div>
+      </div>
+  
+      <script src="script2.js"></script>
+
+  </div>
+  <script>
+      function toggleMenu() {
+          document.querySelector(".menu").classList.toggle("active");
+      }
+  </script>
+
+    <div class="part2">
+
+        
+   
+
+    <footer>
+        <div class="footer-container">
+          <!-- Logo -->
+          <div class="footer-logo">
+            B'Weather
+          </div>
+          
+          <!-- Liens -->
+          <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="contact.html">À propos</a>
+            <a href="contact.html">Contact</a>
+          </div>
+      
+          <!-- Réseaux sociaux -->
+          <div class="footer-socials">
+            <a href="https://www.facebook.com/profile.php?id=61571144656440" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.tiktok.com/@btechrise" title="Tiktok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://www.instagram.com/bsoyffipro/" title="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      
+        <!-- Copyright -->
+        <div class="footer-bottom">
+          &copy; 2025 B'Weather. Tous droits réservés.
+        </div>
+      </footer>
+      
+    </div>
+
+
+
+
+
+    <script src="../script.js"></script>
+</body>
+</html>

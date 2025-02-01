@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Météo en Direct</title>
+    <link rel="stylesheet" href="other.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-layers-expanded/dist/leaflet-control-layers-expanded.js"></script> <!-- Option de contrôle de couche -->
+</head>
+<body>
+   
+ <!-- partie une du site-->
+ <div class="part1.0">
+  <header>
+      <div class="menu-toggle" onclick="toggleMenu()">
+          &#9776;
+      </div>
+      <ul class="menu"> 
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="weather.html">Climat</a></li>
+        <li><a href="map.html">Carte du monde</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+</div>
+<script>
+  function toggleMenu() {
+      document.querySelector(".menu").classList.toggle("active");
+  }
+</script>
+
+
+
+        <div id="map" style="height: 90vh; width: 100%; z-index: -2;"></div>
+        <script>
+            // Initialiser la carte avec les coordonnées de Paris
+            const map = L.map('map', {
+                center: [48.8566, 2.3522],  // Paris
+                zoom: 5,  // Zoom par défaut
+                zoomControl: false,  // Désactiver le contrôle de zoom par défaut
+            });
+    
+            // Ajouter les tuiles OpenStreetMap
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+    
+            // Remplace 'YOUR_API_KEY' par ta clé API personnelle
+            const apiKey = '786357c2f6750d1047835cd0efdc5f95'; // Remplace ici par ta clé API
+    
+            // Ajouter les différentes couches météo d'OpenWeatherMap
+            const cloudLayer = L.tileLayer(`https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=${apiKey}`, {
+                attribution: '&copy; <a href="https://openweathermap.org/">OpenWeatherMap</a>',
+                maxZoom: 19
+            });
+    
+            const precipitationLayer = L.tileLayer(`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=${apiKey}`, {
+                attribution: '&copy; <a href="https://openweathermap.org/">OpenWeatherMap</a>',
+                maxZoom: 19
+            });
+    
+            const windLayer = L.tileLayer(`https://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=${apiKey}`, {
+                attribution: '&copy; <a href="https://openweathermap.org/">OpenWeatherMap</a>',
+                maxZoom: 19
+            });
+    
+            const temperatureLayer = L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${apiKey}`, {
+                attribution: '&copy; <a href="https://openweathermap.org/">OpenWeatherMap</a>',
+                maxZoom: 19
+            });
+    
+            // Ajouter un marqueur personnalisé (ici, Paris)
+            const marker = L.marker([48.8566, 2.3522]).addTo(map);
+            marker.bindPopup("<b>Paris</b><br>Température actuelle : 10°C").openPopup();
+    
+            // Contrôle des couches météo avec une option étendue
+            const overlays = {
+                "Nuages": cloudLayer,
+                "Précipitations": precipitationLayer,
+                "Vent": windLayer,
+                "Température": temperatureLayer
+            };
+    
+            // Contrôle des couches avec Leaflet Control Layers Expanded
+            L.control.layers(null, overlays, {
+                collapsed: false,  // L'option 'false' fait en sorte que le panneau soit ouvert par défaut
+                position: 'topright'  // Position du contrôle des couches
+            }).addTo(map);
+    
+            // Ajouter le contrôle de zoom personnalisé
+            L.control.zoom({
+                position: 'topright'
+            }).addTo(map);
+    
+            // Ajouter la géolocalisation de l'utilisateur
+            map.locate({setView: true, maxZoom: 16});
+    
+            map.on('locationfound', function(e) {
+                L.marker(e.latlng).addTo(map)
+                    .bindPopup("Vous êtes ici!")
+                    .openPopup();
+            });
+        </script>
+
+
+<footer>
+    <div class="footer-container">
+      <!-- Logo -->
+      <div class="footer-logo">
+        B'Weather
+      </div>
+      
+      <!-- Liens -->
+      <div class="footer-links">
+        <a href="index.html">Accueil</a>
+        <a href="contact.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+  
+      <!-- Réseaux sociaux -->
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/profile.php?id=61571144656440" title="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.tiktok.com/@btechrise" title="Tiktok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://www.instagram.com/bsoyffipro/" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  
+    <!-- Copyright -->
+    <div class="footer-bottom">
+      &copy; 2025 B'Weather. Tous droits réservés.
+    </div>
+  </footer>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
