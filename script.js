@@ -17,6 +17,7 @@ form.addEventListener('submit', (event) => {
             const weather = {
                 city: data.name,
                 description: data.weather[0].description,
+                main: data.weather[0].main,
                 temperature: data.main.temp,
                 feels_like: data.main.feels_like, // Température ressentie
                 humidity: data.main.humidity,
@@ -26,12 +27,7 @@ form.addEventListener('submit', (event) => {
         })
         .catch(error => {
             weatherDIV.innerHTML = `
-                <div style="
-                    color: #FF0000;
-                    background: rgba(255, 0, 0, 0.1);
-                    padding: 15px;
-                    border-radius: 10px;
-                    text-align: center;">
+                <div class="error-box">
                     Erreur : ${error.message}. Veuillez vérifier le nom de la ville !
                 </div>`;
         });
@@ -50,10 +46,12 @@ function displayWeather(weather) {
         Rain: 'linear-gradient(to right, #00c6ff, #0072ff)',
         Snow: 'linear-gradient(to right, #83a4d4, #b6fbff)',
         Thunderstorm: 'linear-gradient(to right, #000428, #004e92)',
+        Drizzle: 'linear-gradient(to right, #4facfe, #00f2fe)',
+        Mist: 'linear-gradient(to right, #a8b7c8, #7f8fa6)'
     };
 
     const background =
-        weatherBackgrounds[weather.description] || 'linear-gradient(to right, #83a4d4, #b6fbff)';
+        weatherBackgrounds[weather.main] || 'linear-gradient(to right, #2f6ea6, #6ea7d8)';
     card.style.background = background;
 
     const title = document.createElement('h2');
@@ -79,13 +77,7 @@ function displayWeather(weather) {
     // Ajouter un bouton pour rafraîchir la météo
     const refreshButton = document.createElement('button');
     refreshButton.textContent = 'Rafraîchir';
-    refreshButton.style.marginTop = '15px';
-    refreshButton.style.padding = '10px 20px';
-    refreshButton.style.backgroundColor = '#007BFF';
-    refreshButton.style.color = '#fff';
-    refreshButton.style.border = 'none';
-    refreshButton.style.borderRadius = '5px';
-    refreshButton.style.cursor = 'pointer';
+    refreshButton.classList.add('refresh-button');
     refreshButton.addEventListener('click', () => {
         form.dispatchEvent(new Event('submit'));
     });

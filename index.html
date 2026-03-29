@@ -6,91 +6,79 @@
     <title>B'Weather App</title>
     <link rel="stylesheet" href="other.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
 </head>
 <body>
-    
-    <!-- partie une du site-->
-    <div class="part1">
-      <header>
-          <div class="menu-toggle" onclick="toggleMenu()">
-              &#9776;
-          </div>
-          <ul class="menu"> 
-              <li><a href="index.html">Accueil</a></li>
-              <li><a href="weather.html">Climat</a></li>
-              <li><a href="map.html">Carte du monde</a></li>
-              <li><a href="contact.html">Contact</a></li>
-          </ul>
-      </header>
+    <header>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+        <ul class="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="weather.html">Climat</a></li>
+            <li><a href="map.html">Carte du monde</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </header>
 
+    <main class="site-main">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Votre météo, simple et élégante</h1>
+                <p>Consultez la météo en temps réel, visualisez les conditions sur la carte du monde et restez prêt pour vos journées.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="weather.html"><i class="fas fa-cloud-sun"></i> Voir la météo</a>
+                    <a class="btn btn-secondary" href="map.html"><i class="fas fa-globe"></i> Ouvrir la carte</a>
+                    <button id="openPopup" class="btn btn-secondary" type="button"><i class="fas fa-star"></i> Pop-up</button>
+                </div>
+            </div>
+        </section>
 
-      <button id="openPopup">Pop-up</button>
+        <section class="info-grid">
+            <article class="info-card">
+                <h3>Recherche rapide</h3>
+                <p>Trouvez la météo d'une ville en quelques secondes avec une interface claire.</p>
+            </article>
+            <article class="info-card">
+                <h3>Carte interactive</h3>
+                <p>Suivez les nuages, la pluie, le vent et la température à l'échelle mondiale.</p>
+            </article>
+            <article class="info-card">
+                <h3>Site responsive</h3>
+                <p>Expérience optimisée sur mobile, tablette et ordinateur.</p>
+            </article>
+        </section>
+    </main>
 
-      <div id="popup" class="popup">
-          <div class="popup-content">
-              <span class="close-btn" id="closePopup">&times;</span>
-              <h2>Bienvenue</h2>
-              <p>Consulter votre météo </p>
-              <p>Et retrouvez moi sur mes résaux </p>
-              <p>By: Bamémé Soyffi</p>
-          </div>
-      </div>
-  
-      <script src="script2.js"></script>
-
-  </div>
-  <script>
-      function toggleMenu() {
-          document.querySelector(".menu").classList.toggle("active");
-      }
-  </script>
-
-    <div class="part2">
-
-        
-   
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <h2>Bienvenue sur B'Weather</h2>
+            <p>Consultez votre météo et suivez les dernières conditions du monde.</p>
+            <p>Retrouvez-moi aussi sur les réseaux sociaux.</p>
+            <p><strong>By: Bamémé Soyffi</strong></p>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-container">
-          <!-- Logo -->
-          <div class="footer-logo">
-            B'Weather
-          </div>
-          
-          <!-- Liens -->
-          <div class="footer-links">
-            <a href="index.html">Accueil</a>
-            <a href="contact.html">À propos</a>
-            <a href="contact.html">Contact</a>
-          </div>
-      
-          <!-- Réseaux sociaux -->
-          <div class="footer-socials">
-            <a href="https://www.facebook.com/profile.php?id=61571144656440" title="Facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://www.tiktok.com/@btechrise" title="Tiktok">
-              <i class="fab fa-tiktok"></i>
-            </a>
-            <a href="https://www.instagram.com/bsoyffipro/" title="Instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
+            <div class="footer-logo">B'Weather</div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="contact.html">À propos</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.facebook.com/profile.php?id=61571144656440" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@btechrise" title="Tiktok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/bsoyffipro/" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-      
-        <!-- Copyright -->
-        <div class="footer-bottom">
-          &copy; 2025 B'Weather. Tous droits réservés.
-        </div>
-      </footer>
-      
-    </div>
+        <div class="footer-bottom">&copy; 2025 B'Weather. Tous droits réservés.</div>
+    </footer>
 
-
-
-
-
-    <script src="../script.js"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector(".menu").classList.toggle("active");
+        }
+    </script>
+    <script src="script2.js"></script>
 </body>
 </html>
